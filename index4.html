@@ -6,7 +6,7 @@
 </head>
 <body>
 <!--se determina la localizacion-->
-<div id='ubicacion'></div>
+<div id="ubicacion"></div>
 <script type="text/javascript">
 if(navigator.geolocation) {
 	navigator.geolocation.getCurrentPosition(mostrarUbicacion);
@@ -14,7 +14,7 @@ if(navigator.geolocation) {
 function refrescarUbicacion(){
 	navigator.geolocation.watchPosition(mostrarUbicacion);}
 	</script>
-    
+    <!--se escribe un mapa con la localizacion anterior-->
     <div id="demo"></div>
     <div id="mapholder"></div>
    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFd0aiE5FttY8XRAFI9ecTSpgo2vP-qMk"></script>
@@ -33,10 +33,10 @@ function refrescarUbicacion(){
 		   mapholder.style.height ='500px';
 		   mapholder.style.width ='750px';
 		   var myOptions={
-			   center:lation,zoom:17,
+			   center:latlon,zoom:17,
 			   mapTypeld:google.maps.MapTypeld.ROADMAP,
-			   maptypeControl:false,
-			   navigationControlOptions:{style:google.mapsNavigationControlStyle.SMALL}
+			   mapTypeControl:false,
+			   navigationControlOptions:{style:google.maps.NavigationControlStyle.SMALL}
 		   };
 		   var map=new google.maps.Map(document.getElementById("mapholder").myOptions);
 		   var marker=new google.maps.Marker({positon:latlon,map:map,title:"You are here!"});
